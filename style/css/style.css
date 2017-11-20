@@ -1,0 +1,171 @@
+/**Цвета*/
+/**МИКСИНЫ*/
+/**Стили*/
+.webTool {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999999999;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+  font-family: Verdana;
+}
+.webTool.hide {
+  display: none!important;
+}
+.webTool .reg,
+.webTool .auth,
+.webTool .alert,
+.webTool .recovery,
+.webTool .confirm {
+  display: none;
+  width: 23%;
+  height: inherit;
+  max-height: 20%;
+  background: #3e4e67;
+  border-radius: 4px;
+  position: relative;
+  min-height: 185px;
+  min-width: 250px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+.webTool .reg .title,
+.webTool .auth .title,
+.webTool .alert .title,
+.webTool .recovery .title,
+.webTool .confirm .title {
+  background: #384355;
+  text-align: center;
+  padding: 15px;
+  color: #dadada;
+  border-bottom: 1px #4c5b73 solid;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.webTool .reg .body,
+.webTool .auth .body,
+.webTool .alert .body,
+.webTool .recovery .body,
+.webTool .confirm .body {
+  width: 100%;
+  padding: 15px;
+  height: calc(100% - 90px);
+  overflow-y: auto;
+  font-size: 0.8em;
+  box-sizing: border-box;
+  color: #9e9e9e;
+}
+.webTool .reg .body input,
+.webTool .auth .body input,
+.webTool .alert .body input,
+.webTool .recovery .body input,
+.webTool .confirm .body input {
+  width: 90%;
+  height: 30px;
+  margin: 0 auto 10px auto;
+  display: inherit;
+  background: #384355;
+  border: 1px #4c5b73 solid;
+  padding: 0 10px;
+  border-radius: 3px;
+  outline: none;
+  font-size: 1.5em;
+  color: #dadada;
+}
+.webTool .reg .bottom,
+.webTool .auth .bottom,
+.webTool .alert .bottom,
+.webTool .recovery .bottom,
+.webTool .confirm .bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px #4c5b73 solid;
+  z-index: 100;
+}
+.webTool .reg .bottom .button,
+.webTool .auth .bottom .button,
+.webTool .alert .bottom .button,
+.webTool .recovery .bottom .button,
+.webTool .confirm .bottom .button {
+  padding: 10px;
+  text-align: center;
+  background: #384355;
+  color: #dadada;
+  font-size: 1em;
+  cursor: pointer;
+  box-sizing: border-box;
+  -moz-transition: background-color 0.8s 0.1s ease;
+  -o-transition: background-color 0.8s 0.1s ease;
+  -webkit-transition: background-color 0.8s 0.1s ease;
+  /*Дизайн кнопок*/
+}
+.webTool .reg .bottom .button:hover,
+.webTool .auth .bottom .button:hover,
+.webTool .alert .bottom .button:hover,
+.webTool .recovery .bottom .button:hover,
+.webTool .confirm .bottom .button:hover {
+  background: #ff9800;
+}
+.webTool .reg .bottom .button.success:hover,
+.webTool .auth .bottom .button.success:hover,
+.webTool .alert .bottom .button.success:hover,
+.webTool .recovery .bottom .button.success:hover,
+.webTool .confirm .bottom .button.success:hover {
+  background: #07bc56;
+}
+.webTool .reg.show,
+.webTool .auth.show,
+.webTool .alert.show,
+.webTool .recovery.show,
+.webTool .confirm.show {
+  display: block!important;
+}
+.webTool .reg.hide,
+.webTool .auth.hide,
+.webTool .alert.hide,
+.webTool .recovery.hide,
+.webTool .confirm.hide {
+  display: none!important;
+}
+.webTool .alert .body {
+  height: calc(100% - 37px);
+}
+.webTool .confirm .button {
+  width: 50%;
+  float: left;
+}
+.webTool .confirm .button:last-child {
+  border-left: 1px #4c5b73 solid;
+}
+.webTool .reg {
+  min-height: 280px;
+}
+.webTool .auth {
+  min-height: 215px;
+}
+.webTool .recovery {
+  min-height: 160px;
+}
+.webTool *::-webkit-scrollbar {
+  width: 5px;
+  max-height: 5px;
+}
+.webTool *::-webkit-scrollbar-thumb {
+  background-color: #878787;
+  border-radius: 50px;
+}
+.webTool *::-webkit-scrollbar-track-piece {
+  background: #384355;
+}
+.webTool *::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+[wt-close],
+[wt-open] {
+  cursor: pointer;
+}

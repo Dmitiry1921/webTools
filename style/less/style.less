@@ -1,0 +1,159 @@
+/**Цвета*/
+@main-color: #3e4e67;
+@main-color-text: #dadada;
+@second-color: #384355;
+@second-color-text: #9e9e9e;
+@line-color: #4c5b73;
+@btn-hover: #FF9800;
+@btn-hover-success: #07bc56;
+
+/**МИКСИНЫ*/
+.transition() {
+  -moz-transition: background-color 0.8s 0.1s ease;
+  -o-transition: background-color 0.8s 0.1s ease;
+  -webkit-transition: background-color 0.8s 0.1s ease;
+}
+/**Стили*/
+.webTool{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999999999;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+  font-family: Verdana;
+  &.hide{
+    display: none!important;
+  }
+
+  .reg,
+  .auth,
+  .alert,
+  .recovery,
+  .confirm{
+    display: none;
+    width: 23%;
+    height: inherit;
+    max-height: 20%;
+    background: @main-color;
+    border-radius: 4px;
+    position: relative;
+    min-height: 185px;
+    min-width: 250px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    .title{
+      background: @second-color;
+      text-align: center;
+      padding: 15px;
+      color: @main-color-text;
+      border-bottom: 1px @line-color solid;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .body{
+      width: 100%;
+      padding: 15px;
+      height: ~"calc(100% - 90px)";
+      overflow-y: auto;
+      font-size: 0.8em;
+      box-sizing: border-box;
+      color: @second-color-text;
+
+      input{
+        width: 90%;
+        height: 30px;
+        margin: 0 auto 10px auto;
+        display: inherit;
+        background: @second-color;
+        border: 1px @line-color solid;
+        padding: 0 10px;
+        border-radius: 3px;
+        outline: none;
+        font-size: 1.5em;
+        color: @main-color-text;
+      }
+    }
+    .bottom{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      border-top: 1px @line-color solid;
+      z-index: 100;
+      .button{
+        padding: 10px;
+        text-align: center;
+        background: @second-color;
+        color: @main-color-text;
+        font-size: 1em;
+        cursor: pointer;
+        box-sizing: border-box;
+        .transition();
+        &:hover{
+          background: @btn-hover;
+        }
+        /*Дизайн кнопок*/
+        &.success:hover{
+          background: @btn-hover-success;
+        }
+      }
+    }
+
+    &.show{
+      display: block!important;
+    }
+    &.hide{
+      display: none!important;
+    }
+  }
+
+  .alert{
+    .body{
+      height: ~"calc(100% - 37px)";
+    }
+  }
+  .confirm{
+    .button{
+      width: 50%;
+      float: left;
+      &:last-child{
+        border-left: 1px @line-color solid;
+      }
+    }
+  }
+  .reg{
+    min-height: 280px;
+  }
+  .auth{
+    min-height: 215px;
+  }
+  .recovery{
+    min-height: 160px;
+  }
+  .shadow{
+
+  }
+  *::-webkit-scrollbar {
+    width: 5px;
+    max-height: 5px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #878787;
+    border-radius: 50px;
+  }
+  *::-webkit-scrollbar-track-piece {
+    background: @second-color;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+  }
+}
+
+//Атребуты
+[wt-close],
+[wt-open] {
+  cursor: pointer;
+}

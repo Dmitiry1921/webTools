@@ -1,0 +1,23 @@
+.transition() {
+  -moz-transition: background-color 0.8s 0.1s ease;
+  -o-transition: background-color 0.8s 0.1s ease;
+  -webkit-transition: background-color 0.8s 0.1s ease;
+}
+body{
+  background: #eeeff4;
+}
+.toolBar{
+  .button{
+    padding: 15px 30px;
+    background: #FF9800;
+    display: inline-block;
+    float: left;
+    border-radius: 3px;
+    margin: 10px;
+    cursor: pointer;
+    .transition();
+    &:hover{
+      background: #2196F3;
+    }
+  }
+}

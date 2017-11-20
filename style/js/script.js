@@ -116,8 +116,67 @@ function WebTools(animate,animate_in,animate_out,animate_time){
 
     }
 
+    function htmlLoader(){
+        var html = '<div class="webTool hide">' +
+            '        <div class="alert" id="alert">' +
+            '            <div class="body">' +
+            '                Alert Description' +
+            '            </div>' +
+            '            <div class="bottom">' +
+            '                <div class="button" wt-close>OK</div>' +
+            '            </div>' +
+            '        </div>' +
+            '        <div class="confirm" id="confirm">' +
+            '            <div class="title">Подтверждение</div>' +
+            '            <div class="body">' +
+            '                Описание действия..' +
+            '            </div>' +
+            '            <div class="bottom">' +
+            '                <div class="button success">Подтвердить</div>' +
+            '                <div class="button close" wt-close>Отмена</div>' +
+            '            </div>' +
+            '        </div>' +
+            '        <div class="auth " id="auth">' +
+            '            <div class="title">Вход</div>' +
+            '            <div class="body">' +
+            '                <input type="text" placeholder="Ник">' +
+            '                <input type="text" placeholder="Пароль">' +
+            '                <div align="right">' +
+            '                    <b wt-open="recovery">Забыли пароль ?</b>' +
+            '                </div>' +
+            '            </div>' +
+            '            <div class="bottom">' +
+            '                <div class="button success">Войти</div>' +
+            '            </div>' +
+            '        </div>' +
+            '        <div class="recovery" id="recovery">' +
+            '            <div class="title">Востановить пароль</div>' +
+            '            <div class="body">' +
+            '                <input type="text" placeholder="E-mail">' +
+            '            </div>' +
+            '            <div class="bottom">' +
+            '                <div class="button">Отправить письмо</div>' +
+            '            </div>' +
+            '        </div>' +
+            '        <div class="reg" id="reg">' +
+            '            <div class="title">Регистрация</div>' +
+            '            <div class="body">' +
+            '                <input type="text" placeholder="Ник">' +
+            '                <input type="text" placeholder="E-mail">' +
+            '                <input type="password" placeholder="Пароль">' +
+            '                <input type="password" placeholder="Повторите пароль">' +
+            '            </div>' +
+            '            <div class="bottom">' +
+            '                <div class="button">Зарегистрироватся</div>' +
+            '            </div>' +
+            '        </div>' +
+            '    </div>';
+
+        document.body.innerHTML += html; //Добавляем HTML в body
+    }
 
     function init(){
+        htmlLoader();
         events();
     }
     //
@@ -148,5 +207,5 @@ function WebTools(animate,animate_in,animate_out,animate_time){
 
 //Запускаем класс.
 window.onload = function () {
-    window.webTools = new WebTools(); //Создаем экземпляр класса.
+    window.webTools = new WebTools(true); //Создаем экземпляр класса.
 };

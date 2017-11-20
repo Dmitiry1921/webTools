@@ -8,58 +8,58 @@
 При желании можем подключить CSS анимации [animate.css](https://daneden.github.io/animate.css/)
 
     <link rel="stylesheet" href="css/animate.min.css" type="text/css"/>
-#Как это использовать ?
+# Как это использовать ?
 
-##Alert
+## Alert
     <div wt-open="alert" wt-alert="Hello Alert">Alert</div>
-##Confirm
+## Confirm
 
     <div wt-open="confirm" wt-confirm="Hellp Confirm">Confirm</div>
     
-##Sign-Up 
+## Sign-Up 
     <div wt-open="reg">Sign-Up</div>
-##Auth
+## Auth
 
     <div wt-open="auth">Auth</div>
 
-##Recovery
+## Recovery
 
     <div wt-open="recovery">Recovery</div>
 
 *При клике на созданный вами элемент будет открыватся то или иное окно в зависимости от типа указаного в атрибуте `wt-open="@type@"`* 
 
-#JavaScript API
-##Методы:
+# JavaScript API
+## Методы:
 
 Web-Tools создает глобальный объект`webTools` который содержит в себе некоторые публичные методы которые могут пригодится вам для работы
 
-####Confirm 
+#### Confirm 
 Откроет окно `confirm` с текстом `Текст подтверждения..`
     webTools.confirm('Текст подтверждения..');
-#####Alert
+##### Alert
 Откроет окно `alert` с текстом `Привет Alert!`
 
     webTools.alert('Привет Alert!');
 
-####Recovery
+#### Recovery
 Откроет окно `recovery`
 
      webTools.recovery();
-####Auth
+#### Auth
 Откроет окно `auth`
 
      webTools.auth();
      
-####Sign-Up
+#### Sign-Up
 Откроет окно `reg`
 
      webTools.reg();
      
-####Сlose
+#### Сlose
 Закроет текущее открытое окно Web-Tools
 
      webTools.close();
-##Animate.CSS:
+## Animate.CSS:
 Включение/Выключение поддержки [animate.css](https://daneden.github.io/animate.css/) (по умолчанию: `false`);
 
     webTools.animate = false ;

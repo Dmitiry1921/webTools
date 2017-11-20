@@ -1,9 +1,10 @@
 //Основной класс.
-function webTool(animate,animate_in,animate_out){
+function WebTools(animate,animate_in,animate_out,animate_time){
 
     this.animate = animate !== undefined ? true : false;
-    this.animate_in = animate_in !== undefined ? animate_in : "";
-    this.animate_out = animate_out !== undefined ? animate_out : "";
+    this.animate_in = animate_in !== undefined ? animate_in : "flipInY";
+    this.animate_out = animate_out !== undefined ? animate_out : "flipOutY";
+    this.animate_time = animate_time !== undefined ? animate_time : 500;
 
     this.confirm_text = undefined;
     this.alert_text = undefined;
@@ -82,12 +83,12 @@ function webTool(animate,animate_in,animate_out){
 
         if($this.confirm_text !== undefined){
             $row('.webTool .confirm .body',function (el) {
-                el.textContent = $this.confirm;
+                el.textContent = $this.confirm_text;
             });
         }
         if($this.alert_text !== undefined){
             $row('.webTool .alert .body',function (el) {
-                el.textContent = $this.alert;
+                el.textContent = $this.alert_text;
             });
         }
 
@@ -107,7 +108,7 @@ function webTool(animate,animate_in,animate_out){
             addClass('.webTool>.show','animated');
             setTimeout(function () {
                 addClass('.webTool','hide');
-            },500);
+            },$this.animate_time);
         }else{
             //Добавляем класс скрываающий элемент
             addClass('.webTool','hide');
@@ -122,26 +123,30 @@ function webTool(animate,animate_in,animate_out){
     //
     init();
 
-    /**API*/
+    /** API */
     this.confirm = function(text){
-        $this.confirm = text;
+        $this.confirm_text = text;
         openModal('confirm');
-    };
+    }; //Открывает подтверждение с текстом text
     this.alert = function (text) {
-
-    };
+        $this.alert_text = text;
+        openModal('alert');
+    }; //Открывает оповещение с текстом text
     this.recovery = function(){
-
-    };
+        openModal('recovery');
+    }; //Открывает востановление пароля
     this.auth = function(){
-
-    };
+        openModal('auth');
+    }; //Открывает авторизацию пользвателя
     this.reg = function () {
-
-    };
+        openModal('reg');
+    }; //открывает регистрацию.
+    this.close = function () {
+      closeModal();
+    }; //Закрывает любое открытое окно.
 }
 
 //Запускаем класс.
 window.onload = function () {
-    var webtool = new webTool(true,'flipInY','flipOutY'); //Создаем экземпляр класса.
+    window.webTools = new WebTools(); //Создаем экземпляр класса.
 };
